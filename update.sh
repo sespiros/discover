@@ -27,7 +27,7 @@ if [ -d /pentest ]; then
 fi
 
 echo -e "\e[1;34mUpdating Kali.\e[0m"
-apt-get update ; apt-get -y upgrade ; apt-get -y dist-upgrade ; apt-get -y autoremove ; apt-get -y autoclean ; echo
+pacman -Syu ; echo
 
 if [ -d /opt/BloodHound/.git ]; then
      echo -e "\e[1;34mUpdating BloodHound.\e[0m"
@@ -88,19 +88,19 @@ fi
 
 if [ ! -f /usr/bin/ssconvert ]; then
      echo -e "\e[1;33mInstalling gnumeric.\e[0m"
-     apt-get install -y gnumeric
+     pacman --noconfirm -S gnumeric
      echo
 fi
 
 if [ ! -f /usr/bin/goofile ]; then
      echo -e "\e[1;33mInstalling goofile.\e[0m"
-     apt-get install -y goofile
+     pacman --noconfirm -S goofile
      echo
 fi
 
 if [ ! -f /usr/bin/xmllint ]; then
      echo -e "\e[1;33mInstalling libxml2-utils.\e[0m"
-     apt-get install -y libxml2-utils
+     pacman --noconfirm -S libxml2-utils
      echo
 fi
 
@@ -112,7 +112,7 @@ else
      echo -e "\e[1;33mInstalling Prowl.\e[0m"
      git clone https://github.com/Pickfordmatt/Prowl /opt/prowl
      chmod 755 /opt/prowl/prowl.py
-     apt-get install python-pip python-lxml
+     pacman --noconfirm -S python-pip python-lxml
      pip install dnspython Beautifulsoup4 Gitpython
      echo
 fi
@@ -142,7 +142,7 @@ fi
 
 if [ ! -f /usr/bin/xdotool ]; then
      echo -e "\e[1;33mInstalling xdotool.\e[0m"
-     apt-get install -y xdotool
+     pacman --noconfirm -S xdotool
      echo
 fi
 
@@ -164,7 +164,7 @@ fi
 
 if [ ! -f /usr/bin/xml_grep ]; then
      echo -e "\e[1;33mInstalling xml_grep.\e[0m"
-     apt-get install -y xml-twig-tools
+     pacman --noconfirm -S perl-xml-twig
      echo
 fi
 

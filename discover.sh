@@ -2893,7 +2893,7 @@ fi
 f_run-metasploit(){
 echo
 echo -e "\x1B[1;34mStarting Postgres.\x1B[0m"
-service postgresql start
+systemctl start postgresql
 
 echo
 echo -e "\x1B[1;34mStarting Metasploit.\x1B[0m"
@@ -3426,7 +3426,7 @@ f_run-metasploit
 
 echo
 echo -e "\x1B[1;34mStopping Postgres.\x1B[0m"
-service postgresql stop
+sytemctl stop postgresql
 
 echo
 echo $medium
